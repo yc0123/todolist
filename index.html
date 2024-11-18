@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待辦事項清單</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>待辦事項清單</h1>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="輸入新的待辦事項...">
+            <input type="date" id="dateInput">
+            <select id="categoryInput">
+                <option value="">選擇分類</option>
+                <option value="工作">工作</option>
+                <option value="生活">生活</option>
+                <option value="學習">學習</option>
+                <option value="其他">其他</option>
+            </select>
+            <button onclick="addTask()">添加</button>
+        </div>
+        <div class="filter-section">
+            <select id="categoryFilter" onchange="filterTasks()">
+                <option value="all">所有分類</option>
+                <option value="工作">工作</option>
+                <option value="生活">生活</option>
+                <option value="學習">學習</option>
+                <option value="其他">其他</option>
+            </select>
+            <select id="sortOrder" onchange="sortTasks()">
+                <option value="none">預設排序</option>
+                <option value="asc">日期升序</option>
+                <option value="desc">日期降序</option>
+            </select>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

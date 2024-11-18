@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.2em;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+input, select {
+    padding: 10px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #357abd 0%, #2868a9 100%);
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 12px;
+    padding: 0 0.5rem;
+}
+
+ul {
+    list-style: none;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+li {
+    display: grid;
+    grid-template-columns: 30px minmax(150px, 1fr) 100px 120px 90px;
+    gap: 15px;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+li:hover {
+    background-color: #f1f3f5;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.task-text {
+    color: #495057;
+    font-size: 15px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #adb5bd;
+}
+
+.category-tag {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-工作 { background-color: #e3f2fd; color: #1976d2; }
+.category-生活 { background-color: #fce4ec; color: #c2185b; }
+.category-學習 { background-color: #fff3e0; color: #f57c00; }
+.category-其他 { background-color: #e8f5e9; color: #388e3c; }
+
+.task-date {
+    color: #6c757d;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.task-overdue {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.edit-btn i, .delete-btn i {
+    font-size: 1.1em;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 編輯模式樣式 */
+.edit-container {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 100px 120px 80px;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+.edit-input,
+.edit-date,
+.edit-category {
+    padding: 8px 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.save-btn, .cancel-btn {
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* 自定義 checkbox 樣式 */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #4a90e2;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .filter-section {
+        flex-direction: column;
+    }
+}
+  
